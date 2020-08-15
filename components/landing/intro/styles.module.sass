@@ -1,11 +1,96 @@
+@import './animations.module'
+
+.disappear
+    display: none    
+
 .container
     background: 
         image: url('https://res.cloudinary.com/d1zc3/image/upload/s--D56o8zBV--/v1597089220/portfolio/landing/machu_picchu.jpg')
         size: cover
         position: center
         repeat: no-repeat
-    height: 60rem
     font-size: 1rem
     color: white
-    padding: 2em 1em
+    padding: 3em 1.5em
 
+.changeLanguage
+    width: 100%
+    display: flex
+    justify-content: right
+    font-size: 1.7em
+    color: #5c1c0f
+    margin-bottom: 4em
+    button
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        &:hover
+            animation: 
+                name: languageButton
+                duration: .5s
+                timing-function: ease
+        svg
+            height: 1.5em
+            width: 1.5em
+        span
+            font-size: .55em
+            color: white
+
+
+.main
+    display: flex
+    flex-direction: column
+    align-items: center
+    font-size: 2em
+    h1,h2
+        width: 100%
+        font:
+            family: 'Baloo Tammudu 2', cursive
+    .h2
+        font:
+            size: 1em
+            weight: 300
+        text-align: left
+    .h1
+        font:
+            weight: bold
+            size: 1.5em
+        text-align: right
+        margin-bottom: .5em
+    .profilePic
+        border-radius: 50%
+        height: 4em
+        margin-bottom: 2em
+    section
+        background: rgba(0,0,0,.5)
+        padding: .3em .1em
+        border-radius: .5em
+        margin-bottom: 2em
+        p
+            font-size: .6em
+            font-weight: lighter
+            &.skills
+                font-style: italic
+    .flag
+        height: 1em
+    .signal
+        display: flex
+        justify-content: center
+        align-items: center
+        height: 2em
+        width: 100%
+        animation:
+            name: downArrows
+            duration: 1s
+            iteration-count: infinite
+            timing-function: ease
+
+        svg
+            height: inherit
+            width: inherit
+            animation:
+                name: indicate 
+    
+@include UpAndDown(downArrows)
+@include Vibrate(languageButton)

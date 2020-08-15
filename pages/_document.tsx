@@ -8,13 +8,18 @@ class MyDocument extends Document {
   }
   render() {
     return (
-      <Html>
+      <Html lang="en">
         <Head>
+          <meta charSet="UTF-8" />
           <link rel="apple-touch-icon" sizes="180x180" href="/icon/apple-touch-icon.png" />
           <link rel="icon" type="image/png" sizes="32x32" href="/icon/favicon-32x32.png" />
           <link rel="icon" type="image/png" sizes="16x16" href="/icon/favicon-16x16.png" />
           <link
             href="https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2:wght@400;500;600;700;800&display=swap"
+            rel="stylesheet"
+          />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
             rel="stylesheet"
           />
           <link

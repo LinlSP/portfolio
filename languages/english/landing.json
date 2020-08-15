@@ -1,5 +1,7 @@
 {
   "intro": {
-    "title": ["Hello, I am", "Líncol Sáenz"]
+    "language": "Language",
+    "title": ["Hello, I am", "Líncol Sáenz"],
+    "description": ["A passionated web developer.", "Based in ", "Trilingual. Target-oriented. Disciplined"]
   }
 }
