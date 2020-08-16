@@ -1,10 +1,26 @@
 @import './animations.module'
 
-.invisible
-    opacity: 0
+.flex_column_center
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
 
-.visible
-    opacity: 1
+//////////////////////////Main Class Animation
+$animationDuration: 1s
+
+@mixin animationDelayByOrder($orderNumber)
+    animation-delay: $orderNumber*$animationDuration
+
+.fadeInUpAnimation
+    animation:
+        name: mainClassElement
+        duration: $animationDuration
+        timing-function: ease
+        fill-mode: forwards
+
+@include FadeInUp(mainClassElement)
+////////////////////////////////
 
 .bg
     background: 
@@ -12,6 +28,8 @@
         size: cover
         position: center
         repeat: no-repeat
+    > div 
+        display: flex
 
 .container
     width:100%
@@ -27,11 +45,8 @@
     color: #5c1c0f
     margin-bottom: 4em
     button
-        display: flex
-        flex-direction: column
-        justify-content: center
-        align-items: center
-        transition: all 1s ease
+        @extend .flex_column_center
+        transition: opacity $animationDuration ease
         &:hover
             animation: 
                 name: languageButton
@@ -45,59 +60,66 @@
             color: white
 @include Vibrate(languageButton)
 
-
 .main
-    display: flex
-    flex-direction: column
-    align-items: center
+    @extend .flex_column_center
     font-size: 2em
     h1,h2
         width: 100%
         font:
             family: 'Baloo Tammudu 2', cursive
     .h2
+        cursor: default
         font:
             size: 1em
             weight: 300
         text-align: left
+        @include animationDelayByOrder(0)
     .h1
+        cursor: default
         font:
             weight: bold
             size: 1.5em
         text-align: right
         margin-bottom: .5em
+        @include animationDelayByOrder(1)
     .profilePic
         border-radius: 50%
         height: 4em
         margin-bottom: 2em
+        @include animationDelayByOrder(2)
     section
         background: rgba(0,0,0,.5)
         padding: .3em .1em
         border-radius: .5em
         margin-bottom: 2em
+        @include animationDelayByOrder(3)
         p
+            cursor: default
             font-size: .6em
             font-weight: lighter
             &.skills
                 font-style: italic
-    .flag
-        height: 1em
+        .flag
+            height: 1em
     .signal
         display: flex
         justify-content: center
         align-items: center
         height: 2em
         width: 100%
-        animation:
-            name: downArrows
-            duration: 1s
-            iteration-count: infinite
-            timing-function: ease
+        @include animationDelayByOrder(4)
 
         svg
             height: inherit
             width: inherit
             animation:
-                name: indicate 
+                name: downArrows
+                duration: 1.5s
+                iteration-count: infinite
+                timing-function: ease
+
 @include UpAndDown(downArrows)
     
+@media screen and ( min-width: 600px )
+    .container
+        width: 50%

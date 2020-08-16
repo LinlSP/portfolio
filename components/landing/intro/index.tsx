@@ -18,16 +18,21 @@ function Intro({ data }: Text): JSX.Element {
   const [ref, inSight] = useObserver()
 
   if (inSight) {
-    document.querySelector('#changeLang').className = styles.visible
+    document.querySelector('#changeLang').className = 'visible'
+    document.querySelector('#mainH2').classList.add(styles.fadeInUpAnimation)
+    document.querySelector('#mainH1').classList.add(styles.fadeInUpAnimation)
+    document.querySelector('#profilePic').classList.add(styles.fadeInUpAnimation)
+    document.querySelector('#description').classList.add(styles.fadeInUpAnimation)
+    document.querySelector('#signal').classList.add(styles.fadeInUpAnimation)
   }
 
   return (
     <>
       <div className={styles.bg}>
-        <div className="container" ref={ref}>
+        <div className="container justify-content-center" ref={ref}>
           <div className={`${styles.container}`}>
             <div className={`${styles.changeLanguage}`}>
-              <button id="changeLang" className={styles.invisible}>
+              <button id="changeLang" className="invisibleSass">
                 <LanguageIcon color="white" />
                 <span>{data.language}</span>
               </button>
@@ -37,10 +42,14 @@ function Intro({ data }: Text): JSX.Element {
                 const { title, description } = data
                 return (
                   <>
-                    <h2 className={styles.h2}>{title[0]}</h2>
-                    <h1 className={styles.h1}>{title[1]}</h1>
-                    <img className={`${styles.profilePic}`} src={me} alt="" />
-                    <section>
+                    <h2 id="mainH2" className={`${styles.h2} invisibleSass`}>
+                      {title[0]}
+                    </h2>
+                    <h1 id="mainH1" className={`${styles.h1} invisibleSass`}>
+                      {title[1]}
+                    </h1>
+                    <img id="profilePic" className={`${styles.profilePic} invisibleSass`} src={me} alt="" />
+                    <section id="description" className="invisibleSass">
                       <p>{description[0]}</p>
                       <p>
                         {description[1]}
@@ -51,7 +60,7 @@ function Intro({ data }: Text): JSX.Element {
                   </>
                 )
               })()}
-              <div className={styles.signal}>
+              <div id="signal" className={`${styles.signal} invisibleSass`}>
                 <DownArrow />
               </div>
             </div>
