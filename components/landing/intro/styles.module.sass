@@ -1,14 +1,20 @@
 @import './animations.module'
 
-.disappear
-    display: none    
+.invisible
+    opacity: 0
 
-.container
+.visible
+    opacity: 1
+
+.bg
     background: 
         image: url('https://res.cloudinary.com/d1zc3/image/upload/s--D56o8zBV--/v1597089220/portfolio/landing/machu_picchu.jpg')
         size: cover
         position: center
         repeat: no-repeat
+
+.container
+    width:100%
     font-size: 1rem
     color: white
     padding: 3em 1.5em
@@ -25,6 +31,7 @@
         flex-direction: column
         justify-content: center
         align-items: center
+        transition: all 1s ease
         &:hover
             animation: 
                 name: languageButton
@@ -36,6 +43,7 @@
         span
             font-size: .55em
             color: white
+@include Vibrate(languageButton)
 
 
 .main
@@ -91,6 +99,5 @@
             width: inherit
             animation:
                 name: indicate 
-    
 @include UpAndDown(downArrows)
-@include Vibrate(languageButton)
+    
