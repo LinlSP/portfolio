@@ -1,3 +1,7 @@
 export default function Projects(): JSX.Element {
-  return <></>
+  return (
+    <>
+      <section id="projects" style={{ height: '1000px' }}></section>
+    </>
+  )
 }

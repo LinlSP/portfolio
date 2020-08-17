@@ -1,12 +1,11 @@
 import { useEffect, useRef, useState, MutableRefObject } from 'react'
 
-const options = {
-  root: null,
-  rootMargin: '0px',
-  threshold: 0.3,
-}
-
-export default function CreateIntersectionObserver(): [MutableRefObject<HTMLDivElement>, boolean] {
+export default function CreateIntersectionObserver(threshold: number): [MutableRefObject<HTMLDivElement>, boolean] {
+  const options = {
+    root: null,
+    rootMargin: '0px',
+    threshold: threshold,
+  }
   const [intersected, setIntersected] = useState(false)
   const ref = useRef(null)
 

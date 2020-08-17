@@ -15,20 +15,20 @@ interface Text {
 }
 
 function Intro({ data }: Text): JSX.Element {
-  const [ref, inSight] = useObserver()
+  const [ref, inSight] = useObserver(0.3)
 
   if (inSight) {
+    ////Run Animations
     document.querySelector('#changeLang').className = 'visible'
-    document.querySelector('#mainH2').classList.add(styles.fadeInUpAnimation)
-    document.querySelector('#mainH1').classList.add(styles.fadeInUpAnimation)
-    document.querySelector('#profilePic').classList.add(styles.fadeInUpAnimation)
-    document.querySelector('#description').classList.add(styles.fadeInUpAnimation)
-    document.querySelector('#signal').classList.add(styles.fadeInUpAnimation)
+    const animatedElementsId = ['#mainH2', '#mainH1', '#profilePic', '#description', '#signal']
+    animatedElementsId.forEach((id) => {
+      document.querySelector(id).classList.add(styles.fadeInUpAnimation)
+    })
   }
 
   return (
     <>
-      <div className={styles.bg}>
+      <section id="intro" className={styles.bg}>
         <div className="container justify-content-center" ref={ref}>
           <div className={`${styles.container}`}>
             <div className={`${styles.changeLanguage}`}>
@@ -66,7 +66,7 @@ function Intro({ data }: Text): JSX.Element {
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </>
   )
 }

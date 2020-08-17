@@ -1,3 +1,7 @@
 export default function Contact(): JSX.Element {
-  return <></>
+  return (
+    <>
+      <section id="contact" style={{ height: '500px' }}></section>
+    </>
+  )
 }
