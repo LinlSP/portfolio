@@ -14,7 +14,6 @@ export default function Landing(): JSX.Element {
         <Projects />
         <Skills />
         <Contact />
-        <section id="hello" style={{ height: '1000px' }}></section>
       </MainSectionWrapper>
     </>
   )

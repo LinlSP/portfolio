@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react'
 import styles from './styles.module.sass'
+import SectionIndicator from 'Icons/landing/sectionIndicator'
 
 export default function sideIndicatorWrapper({ children }: { children: React.ReactNode }): JSX.Element {
-  const [childrenProps, setChildrenProps] = useState<{ name: string; position: string }[]>([])
+  const [childrenProps, setChildrenProps] = useState<{ name: string; width: string }[]>([])
 
   useEffect(() => {
     //////////Initiate progress bar
@@ -24,18 +25,16 @@ export default function sideIndicatorWrapper({ children }: { children: React.Rea
     window.addEventListener('scroll', setProgress)
     setProgress()
     ////////
-    ///////////find children names(aka id's), calculate position and re-render
+    ///////////find children names(aka id's), calculate width percentage and re-render
     const wrapperChildrenLength = mainSectionWrapper.children.length
     const childrenNamesArray = []
-    let prevPosition = 0
     for (let i = 1; i < wrapperChildrenLength; i++) {
       const child = mainSectionWrapper.children[i]
-      const positionPercentage = (child.clientHeight / height) * 75
+      const sectionWidth = (child.clientHeight / height) * 100
       const property = {
         name: child.id,
-        position: positionPercentage + prevPosition + '%',
+        width: sectionWidth + '%',
       }
-      prevPosition += positionPercentage
       childrenNamesArray.push(property)
     }
     setChildrenProps(childrenNamesArray)
@@ -48,13 +47,16 @@ export default function sideIndicatorWrapper({ children }: { children: React.Rea
       <div id="mainSection" className={`${styles.position_relative}`}>
         <div id="progressbar_container" className={`${styles.progressbar_container}`}>
           <hr id="progressBar" />
-          {childrenProps.map(({ name, position }, index) => (
-            <div className={styles.section_name} style={{ marginLeft: position }} key={index}>
-              {name}
-            </div>
-          ))}
+          <div className="d-flex">
+            {childrenProps.map(({ name, width }, index) => (
+              <div key={index} className={`${styles.svg_container}`} style={{ width: `${width}` }}>
+                <SectionIndicator />
+                {name}
+              </div>
+            ))}
+          </div>
         </div>
-        {/* every landing_component must be contained in a section tag with its name as id, in order to make this wrapper reusable */}
+        {/* every landing_component must be contained in a section tag with its name as id, in order to let this wrapper be reusable */}
         {children}
       </div>
     </>
