@@ -11,7 +11,7 @@ export default function Landing(): JSX.Element {
     <>
       <Intro data={myData.intro} />
       <MainSectionWrapper>
-        <Projects />
+        <Projects data={myData.projects} />
         <Skills />
         <Contact />
       </MainSectionWrapper>

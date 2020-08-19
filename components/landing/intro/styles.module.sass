@@ -1,4 +1,4 @@
-@import './animations.module'
+@use 'animations.module' as *
 
 .flex_column_center
     display: flex
@@ -28,12 +28,13 @@ $animationDuration: 1s
         size: cover
         position: center
         repeat: no-repeat
+    font-size: 1rem
     > div 
         display: flex
 
 .container
+    font-size: 1em
     width:100%
-    font-size: 1rem
     color: white
     padding: 3em 1.5em
 

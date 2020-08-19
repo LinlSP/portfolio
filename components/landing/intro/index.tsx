@@ -7,14 +7,12 @@ const me = 'https://res.cloudinary.com/d1zc3/image/upload/s--488_HI4D--/v1597371
 const countryFlag =
   'https://res.cloudinary.com/d1zc3/image/upload/s--2K1NMQS5--/v1597089233/portfolio/landing/peru_flag.jpg'
 interface Text {
-  data: {
-    language: string
-    title: string[]
-    description: string[]
-  }
+  language: string
+  title: string[]
+  description: string[]
 }
 
-function Intro({ data }: Text): JSX.Element {
+function Intro({ data }: { data: Text }): JSX.Element {
   const [ref, inSight] = useObserver(0.3)
 
   if (inSight) {

@@ -16,9 +16,9 @@ export default function sideIndicatorWrapper({ children }: { children: React.Rea
 
     const setProgress = (): void => {
       const wrapperScrollTop = (html.scrollTop || body.scrollTop) - intro.clientHeight + html.clientHeight
-      if (wrapperScrollTop >= 0) {
-        const progress = (wrapperScrollTop / height) * 100 + '%'
-        progressBar.style.width = progress
+      const progress = (wrapperScrollTop / height) * 100
+      if (progress >= 0) {
+        progressBar.style.width = progress + '%'
       }
     }
 
