@@ -12,7 +12,7 @@ $cardTransitionDuration: .5s
     right: 0
     position: absolute
     height: 100%
-    width: 20em
+    width: 13em
     opacity: .4
 .bgFigureLeft
     display: none
@@ -24,6 +24,7 @@ $cardTransitionDuration: .5s
     padding: 5em 1.5em
     display:  flex
     position: relative
+    flex-direction: column
     justify-content: center
     align-items: center
     .arrow
@@ -37,6 +38,9 @@ $cardTransitionDuration: .5s
         display: none
         left: 0
         transform: rotate(180deg)
+    .counter
+        font-size: 2.5em
+        color: white    
 .cards_container
     overflow: hidden
     display: flex

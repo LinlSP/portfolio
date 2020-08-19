@@ -9,13 +9,14 @@ export default function sideIndicatorWrapper({ children }: { children: React.Rea
     //////////Initiate progress bar
     const body = document.body,
       html = document.documentElement,
-      intro = document.querySelector('#intro'),
+      // intro = document.querySelector('#intro'),
+      intro = 0,
       mainSectionWrapper = document.querySelector('#mainSection'),
       progressBar: HTMLElement = document.querySelector('#progressBar'),
       height = mainSectionWrapper.clientHeight
 
     const setProgress = (): void => {
-      const wrapperScrollTop = (html.scrollTop || body.scrollTop) - intro.clientHeight + html.clientHeight
+      const wrapperScrollTop = (html.scrollTop || body.scrollTop) - intro + html.clientHeight
       const progress = (wrapperScrollTop / height) * 100
       if (progress >= 0) {
         progressBar.style.width = progress + '%'

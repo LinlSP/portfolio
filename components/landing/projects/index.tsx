@@ -58,6 +58,7 @@ export default function Projects({ data }: { data: Array<objects> }): JSX.Elemen
               ))}
             </div>
           </div>
+          <span className={styles.counter}>{position + '/' + data.length}</span>
           <Arrow
             id="rightArrow"
             className={`${styles.arrow}`}
