@@ -13,7 +13,7 @@ interface Text {
 }
 
 function Intro({ data }: { data: Text }): JSX.Element {
-  const [ref, inSight] = useObserver(0.3)
+  const [ref, inSight] = useObserver(0.2)
 
   if (inSight) {
     ////Run Animations
