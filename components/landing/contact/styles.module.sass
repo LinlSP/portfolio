@@ -10,6 +10,7 @@
     opacity: .4
 .bgFigureLeft
     @extend .bgFigure
+    display: none
     top: 0
     left: 0
     transform: rotate(180deg)
@@ -20,4 +21,14 @@
     flex-direction: column
     justify-content: center
     align-items: center
-    height: 100px
+.form
+    border: solid white .2em
+    border-radius: 1em
+    padding: 1em 1em
+    display: flex
+    width: 100%
+    flex-direction: column
+    align-items: flex-end
+    .input,textarea
+        margin-bottom: 2em
+        font-size: 1.2em
