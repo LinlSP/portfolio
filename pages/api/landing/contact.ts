@@ -19,7 +19,6 @@ export default async (req, res) => {
       },
       body: params,
     }).then((res) => res.json())
-    // console.log(req.connection.remoteAddress, captchaResponse)
     res.send(captchaResponse.success)
   }
 }

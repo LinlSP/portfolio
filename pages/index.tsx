@@ -1,4 +1,5 @@
 import Landing from 'components/landing'
+import Footer from 'components/footer'
 import Header from 'next/head'
 
 export default function Home(): JSX.Element {
@@ -9,6 +10,7 @@ export default function Home(): JSX.Element {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Header>
       <Landing />
+      <Footer />
     </>
   )
 }
