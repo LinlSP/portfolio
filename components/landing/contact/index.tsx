@@ -31,9 +31,7 @@ export default function Contact(): JSX.Element {
   }
   return (
     <>
-      <Head>
-        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-      </Head>
+      <Head>{/* <script src="https://www.google.com/recaptcha/api.js" async defer></script> */}</Head>
       <section id="contact" className={styles.bg}>
         <BgFigure className={styles.bgFigure} />
         <div className={`${styles.container} container`}>

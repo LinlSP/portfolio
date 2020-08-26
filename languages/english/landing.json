@@ -1,30 +1,61 @@
 {
   "intro": {
-    "language": "Language",
+    "bg": {
+      "url": "https://res.cloudinary.com/d1zc3/image/upload/s--D56o8zBV--/v1597089220/portfolio/landing/machu_picchu.jpg",
+      "author": "https://unsplash.com/@sebastiantapiahuerta"
+    },
+
+    "languages": {
+      "title": "Language",
+      "list": ["spanish", "english", "german"]
+    },
     "title": ["Hello, I am", "Líncol Sáenz"],
     "description": ["A passionated web developer.", "Based in ", "Trilingual. Target-oriented. Disciplined"]
   },
-  "projects": [
-    {
-      "name": "dizce.com",
-      "logo": "https://res.cloudinary.com/d1zc3/image/upload/s--ka7EdJHk--/v1597771520/portfolio/projects/dizce/logo.png",
-      "phrase": "Explore or present your content in other languages, without learning them",
-      "description": "'Dizce' is a company dedicated to provide you with access to information or make your information accessible in other languages, in a professional and personalized way, but at a low cost.",
-      "href": "https://dizce.com/"
+  "projects": {
+    "bg": {
+      "url": "https://res.cloudinary.com/d1zc3/image/upload/s--N8h3y23g--/v1598399179/portfolio/landing/amazonas.jpg",
+      "author": "https://unsplash.com/@isaacquesada"
     },
-    {
-      "name": "dizce.com",
-      "logo": "https://cdn.pixabay.com/photo/2016/12/13/14/16/seamless-1904165_960_720.jpg",
-      "phrase": "Explore or present your content in other languages, without learning them",
-      "description": "'Dizce' is a company dedicated to provide you with access to information or make your information accessible in other languages, in a professional and personalized way, but at a low cost.",
-      "href": "https://dizce.com/"
+    "list": [
+      {
+        "name": "dizce.com",
+        "logo": "https://res.cloudinary.com/d1zc3/image/upload/s--ka7EdJHk--/v1597771520/portfolio/projects/dizce/logo.png",
+        "phrase": "Explore or present your content in other languages, without learning them",
+        "description": "'Dizce' is a company dedicated to provide you with access to information or make your information accessible in other languages, in a professional and personalized way, but at a low cost.",
+        "href": "https://dizce.com/"
+      },
+      {
+        "name": "dizce.com",
+        "logo": "https://cdn.pixabay.com/photo/2016/12/13/14/16/seamless-1904165_960_720.jpg",
+        "phrase": "Explore or present your content in other languages, without learning them",
+        "description": "'Dizce' is a company dedicated to provide you with access to information or make your information accessible in other languages, in a professional and personalized way, but at a low cost.",
+        "href": "https://dizce.com/"
+      },
+      {
+        "name": "dizce.com",
+        "logo": "https://cdn.pixabay.com/photo/2016/12/13/14/16/seamless-1904165_960_720.jpg",
+        "phrase": "Explore or present your content in other languages, without learning them",
+        "description": "'Dizce' is a company dedicated to provide you with access to information or make your information accessible in other languages, in a professional and personalized way, but at a low cost.",
+        "href": "https://dizce.com/"
+      }
+    ]
+  },
+  "skills": {
+    "bg": {
+      "url": "https://res.cloudinary.com/d1zc3/image/upload/s--HPm2c7ba--/v1598471505/portfolio/landing/lima.jpg",
+      "author": "https://unsplash.com/@leosvenegas"
     },
-    {
-      "name": "dizce.com",
-      "logo": "https://cdn.pixabay.com/photo/2016/12/13/14/16/seamless-1904165_960_720.jpg",
-      "phrase": "Explore or present your content in other languages, without learning them",
-      "description": "'Dizce' is a company dedicated to provide you with access to information or make your information accessible in other languages, in a professional and personalized way, but at a low cost.",
-      "href": "https://dizce.com/"
+    "charts": {
+      "programming": {
+        "indicators": {
+          "label": "ME",
+          "levels": ["Excelent", "Really Good", "Good"]
+        },
+        "excelent": ["REACTJS", "EXPRESSJS", "GIT", "ADOBEXD", "CSS&HTML"],
+        "really_good": ["NEXTJS"],
+        "good": ["TYPESCRIPT"]
+      }
     }
-  ]
+  }
 }

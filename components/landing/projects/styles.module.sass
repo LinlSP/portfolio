@@ -1,11 +1,21 @@
-// @use 'animations.module' as animations
+@use 'animations.module' as animations
 
 $cardWidth: 15em
 $cardTransitionDuration: .5s
         
 
+.fadeInRightAnimation
+    animation: 
+        name: container
+        duration: 1s
+        fill-mode: forwards
+@include animations.FadeInRight($name: container)
+////////////////////////////////////////////
 .bg
-    background: linear-gradient(90deg, rgba(39,0,0,1) 0%, rgba(72,66,66,1) 100%)
+    background: 
+        size: cover
+        position: center
+        repeat: no-repeat
     font-size: 1rem
     position: relative
 .bgFigure
@@ -20,14 +30,17 @@ $cardTransitionDuration: .5s
     top: 0
     left: 0
     transform: rotate(180deg)
+
 .container
-    padding: 5em 1.5em
+    opacity: 0
+    padding: 7em 1.5em
     display:  flex
     position: relative
     flex-direction: column
     justify-content: center
     align-items: center
     .arrow
+        margin: 0 .3em
         z-index: 100
         position: absolute
         width: 2em
@@ -40,15 +53,15 @@ $cardTransitionDuration: .5s
         transform: rotate(180deg)
     .counter
         font-size: 2.5em
-        color: white    
+        color: rgba(0, 0, 0, .8)
+        font-family: 'Baloo Tammudu 2', cursive
 .cards_container
     overflow: hidden
     display: flex
     justify-content: flex-start
     padding-left: 0
+    margin-bottom: 1em
     width: $cardWidth
-    // width: $cardWidth
-            
 
 .cards_wrapper
     width: auto
@@ -58,37 +71,53 @@ $cardTransitionDuration: .5s
     transition-duration: $cardTransitionDuration
 
 .card
-    padding: 2em 1em
+    transition-duration: $cardTransitionDuration
     width: $cardWidth
-    border: .2em blue solid
     color: white
     display: flex
     flex-direction: column
     align-items: center
-    transition-duration: $cardTransitionDuration
     cursor: pointer
-    > div
-        width: 100%
-        height: 8em
-        background:
-            size: contain
-            position: center
-            repeat: no-repeat
-        margin-bottom: .5em
+
     h1
-        font-size: 2.5em
-        margin-bottom: .3em
+        color: rgba(0, 0, 0, .8)
+        width: 100%
+        text-transform: uppercase
+        font-size: 1.2em
+        margin-bottom: 1em
+        text-align: left
+
+    .card_content
+        padding: .5em .5em
+        display: flex
+        flex-direction: column
+        align-items: center
+        background: rgba(0,0,0,.7)
+        border-radius: .5em
+        > div
+            width: 100%
+            height: 8em
+            background:
+                size: contain
+                position: center
+                repeat: no-repeat
+            margin-bottom: 1.5em
 
     h2
         font-size: 1.25em
-        margin-bottom: 2em
+        margin-bottom: 1.5em
     textarea
+        border-radius: .2em
+        color: white
+        border: rgba(255, 255, 255, .5) 2px solid
+        text-align: justify
         cursor: default
         resize: none
+        text-align: justify
+        height: 9em
         font-size: .8em
+        width: 100%
         padding: .5em
-        width: 90%
-        color: white
         background: transparent
     
 @media screen and ( min-width: 992px )

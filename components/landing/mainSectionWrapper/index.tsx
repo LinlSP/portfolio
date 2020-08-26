@@ -52,7 +52,7 @@ export default function sideIndicatorWrapper({ children }: { children: React.Rea
           <div className="d-flex">
             {childrenProps.map(({ name, width }, index) => (
               <div key={index} className={`${styles.svg_container}`} style={{ width: `${width}` }}>
-                <SectionIndicator />
+                <SectionIndicator color="white" />
                 {name}
               </div>
             ))}

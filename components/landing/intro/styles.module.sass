@@ -21,10 +21,29 @@ $animationDuration: 1s
 
 @include FadeInUp(mainClassElement)
 ////////////////////////////////
+.language_menu
+    background: black
+    overflow: auto
+    position: absolute
+    width: 100%
+    transition-duration:  .5s
+    height: auto
+    transform: translateY(-100%)
+    > div
+        padding: .5em 0
+        width: 100%
+        display: flex
+        justify-content: space-between
+        align-items: center
+    span
+        padding: 0 1em
+        font-size: 1em
+        text-transform: uppercase
 
+
+///////////////////////////////////
 .bg
     background: 
-        image: url('https://res.cloudinary.com/d1zc3/image/upload/s--D56o8zBV--/v1597089220/portfolio/landing/machu_picchu.jpg')
         size: cover
         position: center
         repeat: no-repeat
@@ -36,7 +55,7 @@ $animationDuration: 1s
     font-size: 1em
     width:100%
     color: white
-    padding: 3em 1.5em
+    padding: 3.5em 1.5em
 
 .changeLanguage
     width: 100%

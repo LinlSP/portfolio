@@ -2,17 +2,26 @@ import useObserver from 'customHooks/intersectionObserver'
 import styles from './styles.module.sass'
 import LanguageIcon from 'Icons/landing/worldIcon'
 import DownArrow from 'Icons/landing/doubleArrow'
+import { useState } from 'react'
 
 const me = 'https://res.cloudinary.com/d1zc3/image/upload/s--488_HI4D--/v1597371013/portfolio/landing/ich.jpg'
 const countryFlag =
   'https://res.cloudinary.com/d1zc3/image/upload/s--2K1NMQS5--/v1597089233/portfolio/landing/peru_flag.jpg'
 interface Text {
-  language: string
+  bg: {
+    url: string
+    author: string
+  }
+  languages: {
+    title: string
+    list: string[]
+  }
   title: string[]
   description: string[]
 }
 
 function Intro({ data }: { data: Text }): JSX.Element {
+  const [languagesHidden, setLanguagesHidden] = useState<boolean>(false)
   const [ref, inSight] = useObserver(0.2)
 
   if (inSight) {
@@ -26,13 +35,24 @@ function Intro({ data }: { data: Text }): JSX.Element {
 
   return (
     <>
-      <section id="intro" className={styles.bg}>
+      <div
+        id="language_menu"
+        className={`${styles.language_menu}`}
+        style={{ transform: `translateY(${!languagesHidden ? '-100%' : '0'})` }}
+      >
+        <div className="container">
+          {data.languages.list.map((language, index) => (
+            <span key={index}>{language}</span>
+          ))}
+        </div>
+      </div>
+      <section id="intro" className={styles.bg} style={{ backgroundImage: `url(${data.bg.url})` }}>
         <div className="container justify-content-center" ref={ref}>
           <div className={`${styles.container}`}>
             <div className={`${styles.changeLanguage}`}>
-              <button id="changeLang" className="invisibleSass">
+              <button id="changeLang" className="invisibleSass" onClick={() => setLanguagesHidden(!languagesHidden)}>
                 <LanguageIcon color="white" />
-                <span>{data.language}</span>
+                <span>{data.languages.title}</span>
               </button>
             </div>
             <div className={`${styles.main}`}>
