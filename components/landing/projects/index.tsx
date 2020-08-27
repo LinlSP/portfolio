@@ -42,13 +42,13 @@ export default function Projects({
   }
 
   if (inSight) {
-    document.querySelector('#project_container').classList.add(styles.fadeInRightAnimation)
+    document.querySelector('#project_container').classList.add(styles.slideInRightAnimation)
   }
 
   return (
     <>
-      <section id="projects" className={styles.bg} style={{ backgroundImage: `url(${data.bg.url})` }}>
-        <div id="project_container" className={`${styles.container} container`} ref={ref}>
+      <section id="projects" className={styles.bg} style={{ backgroundImage: `url(${data.bg.url})` }} ref={ref}>
+        <div id="project_container" className={`${styles.container} container`}>
           <Arrow
             id="leftArrow"
             className={`${styles.arrow} ${styles.left}`}

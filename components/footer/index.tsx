@@ -7,7 +7,6 @@ export default function Footer(): JSX.Element {
     <>
       <section id="footer" className={`${styles.bg}`}>
         <div className={`${styles.container} container`}>
-          <span>SEND ME A DM:</span>
           <a href="https://www.instagram.com/linlsp02/">
             <Instagram />
           </a>

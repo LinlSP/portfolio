@@ -1,5 +1,8 @@
 .bg
-    background: linear-gradient(90deg, rgba(39,0,0,1) 0%, rgba(93,193,185,1) 100%)
+    background: 
+        size: cover
+        position: center
+        repeat: no-repeat
     font-size: 1rem
     position: relative
 .bgFigure
@@ -15,12 +18,19 @@
     left: 0
     transform: rotate(180deg)
 .container
-    padding: 5em 1.5em
+    transform: translateX(-110%)
+    transition: 
+        duration: 1s
+    padding: 7em 1.5em
     display:  flex
     position: relative
     flex-direction: column
     justify-content: center
     align-items: center
+////////////////////////////////////////
+.slideInLeftAnimation
+    transform: translateX(0)
+////////////////////////////////////////
 .form
     border: solid white .2em
     border-radius: 1em
@@ -31,4 +41,6 @@
     align-items: flex-end
     .input,textarea
         margin-bottom: 2em
-        font-size: 1.2em
+        font-size: 1em
+    textarea
+        height: 12em

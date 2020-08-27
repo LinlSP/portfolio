@@ -53,12 +53,12 @@ export default function sideIndicatorWrapper({ children }: { children: React.Rea
             {childrenProps.map(({ name, width }, index) => (
               <div key={index} className={`${styles.svg_container}`} style={{ width: `${width}` }}>
                 <SectionIndicator color="white" />
-                {name}
+                <a href={`#${name}`}>{name}</a>
               </div>
             ))}
           </div>
         </div>
-        {/* every landing_component must be contained in a section tag with its name as id, in order to let this wrapper be reusable */}
+        {/* every landing component must be contained in a section tag with its name as id, in order to let this wrapper be reusable */}
         {children}
       </div>
     </>

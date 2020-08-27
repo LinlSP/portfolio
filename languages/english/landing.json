@@ -1,20 +1,33 @@
 {
   "intro": {
     "bg": {
-      "url": "https://res.cloudinary.com/d1zc3/image/upload/s--D56o8zBV--/v1597089220/portfolio/landing/machu_picchu.jpg",
+      "url": "https://res.cloudinary.com/d1zc3/image/upload/s--ylXO-PYg--/v1598561115/portfolio/landing/machu_picchu_1.jpg",
       "author": "https://unsplash.com/@sebastiantapiahuerta"
     },
 
     "languages": {
       "title": "Language",
-      "list": ["spanish", "english", "german"]
+      "list": [
+        {
+          "language": "spanish",
+          "route": "/es"
+        },
+        {
+          "language": "english",
+          "route": "/"
+        },
+        {
+          "language": "german",
+          "route": "/de"
+        }
+      ]
     },
     "title": ["Hello, I am", "Líncol Sáenz"],
     "description": ["A passionated web developer.", "Based in ", "Trilingual. Target-oriented. Disciplined"]
   },
   "projects": {
     "bg": {
-      "url": "https://res.cloudinary.com/d1zc3/image/upload/s--N8h3y23g--/v1598399179/portfolio/landing/amazonas.jpg",
+      "url": "https://res.cloudinary.com/d1zc3/image/upload/s--LGN9WGat--/v1598561114/portfolio/landing/amazonas_1.jpg",
       "author": "https://unsplash.com/@isaacquesada"
     },
     "list": [
@@ -43,19 +56,40 @@
   },
   "skills": {
     "bg": {
-      "url": "https://res.cloudinary.com/d1zc3/image/upload/s--HPm2c7ba--/v1598471505/portfolio/landing/lima.jpg",
+      "url": "https://res.cloudinary.com/d1zc3/image/upload/s--Rj9mDBBo--/v1598561113/portfolio/landing/lima_1.jpg",
       "author": "https://unsplash.com/@leosvenegas"
     },
+    "languages": [
+      {
+        "language": "Spanish",
+        "level": "Native"
+      },
+      {
+        "language": "German",
+        "level": "C1"
+      },
+      {
+        "language": "English",
+        "level": "B2"
+      }
+    ],
     "charts": {
       "programming": {
         "indicators": {
           "label": "ME",
-          "levels": ["Excelent", "Really Good", "Good"]
+          "levels": ["Beginner", "Intermediate", "Advanced", "Professional"]
         },
-        "excelent": ["REACTJS", "EXPRESSJS", "GIT", "ADOBEXD", "CSS&HTML"],
-        "really_good": ["NEXTJS"],
-        "good": ["TYPESCRIPT"]
+        "professional": [],
+        "advanced": ["REACTJS", "EXPRESSJS", "GIT", "ADOBEXD", "CSS&HTML"],
+        "intermediate": ["NEXTJS", "TYPESCRIPT"],
+        "beginner": ["PYTHON", "GRAPHQL"]
       }
+    }
+  },
+  "contact": {
+    "bg": {
+      "url": "https://res.cloudinary.com/d1zc3/image/upload/s--R9hdZF5u--/v1598561119/portfolio/landing/barranco_1.jpg",
+      "author": "https://unsplash.com/@andresurena"
     }
   }
 }

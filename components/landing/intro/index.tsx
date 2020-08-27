@@ -3,8 +3,9 @@ import styles from './styles.module.sass'
 import LanguageIcon from 'Icons/landing/worldIcon'
 import DownArrow from 'Icons/landing/doubleArrow'
 import { useState } from 'react'
+import Link from 'next/link'
 
-const me = 'https://res.cloudinary.com/d1zc3/image/upload/s--488_HI4D--/v1597371013/portfolio/landing/ich.jpg'
+const me = 'https://res.cloudinary.com/d1zc3/image/upload/s--488_HI4D--/v1598559813/portfolio/landing/ich.jpg'
 const countryFlag =
   'https://res.cloudinary.com/d1zc3/image/upload/s--2K1NMQS5--/v1597089233/portfolio/landing/peru_flag.jpg'
 interface Text {
@@ -14,7 +15,12 @@ interface Text {
   }
   languages: {
     title: string
-    list: string[]
+    list: [
+      {
+        language: string
+        route: string
+      }
+    ]
   }
   title: string[]
   description: string[]
@@ -41,8 +47,10 @@ function Intro({ data }: { data: Text }): JSX.Element {
         style={{ transform: `translateY(${!languagesHidden ? '-100%' : '0'})` }}
       >
         <div className="container">
-          {data.languages.list.map((language, index) => (
-            <span key={index}>{language}</span>
+          {data.languages.list.map(({ language, route }, index) => (
+            <Link href={route} key={index}>
+              <a>{language}</a>
+            </Link>
           ))}
         </div>
       </div>

@@ -1,14 +1,22 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-import { useEffect } from "react"
+import { useEffect } from 'react'
 import Head from 'next/head'
 import styles from './styles.module.sass'
+import useObserver from 'customHooks/intersectionObserver'
+import Arrow from 'Icons/landing/iosArrow'
 
 // interface myData{
 //   "bg": {
 //     "url": string
 //     "author": string
-//   },
+//   }
+// "languages":[
+//   {
+//     "language": string
+//     "level":string
+//   }
+// ]
 //   "charts": {
 //     "programming": {
 //       "indicators":{
@@ -22,39 +30,40 @@ import styles from './styles.module.sass'
 //   }
 // }
 
-export default function Skills({data: myData}) {
-  const {programming} = myData.charts
+export default function Skills({ data: myData }) {
+  const [ref, inSight] = useObserver(0.2)
+
+  const { programming } = myData.charts
   const codingChart = {
-    "label": programming.indicators.label,
-    "levels":programming.indicators.levels.reverse(),
-    "technologies": [...programming.excelent, ...programming.really_good, ...programming.good]
+    label: programming.indicators.label,
+    levels: programming.indicators.levels,
+    technologies: [...programming.advanced, ...programming.intermediate, ...programming.beginner],
   }
 
-  const createMySkillsChart = ( )=> {
-//     console.log(                [...Array(programming.excelent.length)].map(()=>3)
-// )
-
+  const createMySkillsChart = () => {
     const ctx = document.querySelector('#my_skills').getContext('2d')
     new Chart(ctx, {
       type: 'radar',
       data: {
-          labels: codingChart.technologies,
-          datasets: [{
-              label: codingChart.label,
-              backgroundColor: 'rgba(0,0,0,.5)',
-              pointBorderColor: 'white',
-              data: [
-                // Assign value to each technology base on level [from excellent (biggest number) to good (lowest number) --- In the same order as codingChart.technologies]
-                ...[...Array(programming.excelent.length)].map(()=>3),
-                ...[...Array(programming.really_good.length)].map(()=>2),
-                ...[...Array(programming.good.length)].map(()=>1)
-              ]
-            }
-        ]
+        labels: codingChart.technologies,
+        datasets: [
+          {
+            label: codingChart.label,
+            backgroundColor: 'rgba(255,255,255,.5)',
+            pointBorderColor: 'white',
+            data: [
+              // Assign value to each technology base on level [from advanced (biggest number) to beginner (lowest number) --- In the same order as codingChart.technologies]
+              ...[...Array(programming.advanced.length)].map(() => 3),
+              ...[...Array(programming.intermediate.length)].map(() => 2),
+              ...[...Array(programming.beginner.length)].map(() => 1),
+            ],
+          },
+        ],
       },
-  
+
       options: {
-        tooltips:{
+        aspectRatio: 1,
+        tooltips: {
           enabled: false,
           // callbacks: {
           //   label: function(tooltipItem, data) {
@@ -62,48 +71,64 @@ export default function Skills({data: myData}) {
           //   }}
         },
         legend: {
+          fontSize: 14,
           position: 'top',
           labels: {
-            fontColor: 'white'
-
-          }
+            fontColor: 'white',
+          },
         },
         scale: {
-          gridLines:{
-            color: 'white'
+          gridLines: {
+            color: 'white',
           },
           pointLabels: {
-            // fontSize: 5,
-            fontColor: 'white'
+            fontColor: 'white',
+            fontSize: 13,
           },
           ticks: {
-            // pointLabels: {
-            //   display: true
-            // },
-            // fontSize: 10,
+            backdropColor: 'white',
+            fontColor: 'black',
+            fontSize: 12,
             stepSize: 1,
             min: 0,
             max: codingChart.levels.length,
-            callback: function(value, index, values){
-              return  codingChart.levels[index-1]
-            }
-        }
-        }
-      }
-  });
+            callback: function (value, index, values) {
+              return codingChart.levels[index - 1]
+            },
+          },
+        },
+      },
+    })
   }
-  useEffect(()=>{
+  useEffect(() => {
     createMySkillsChart()
-  },[])
+  }, [])
+
+  if (inSight) {
+    document.querySelector('#skills_container').classList.add(styles.grow_animation)
+  }
+
   return (
     <>
-    <Head>
-      <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-    </Head>
-      <section id="skills" className={styles.bg} style={{backgroundImage: `url(${myData.bg.url})`}}>
-        <div className={`${styles.container} container`}>
-          <canvas id="my_skills"></canvas>
-
+      <Head>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+      </Head>
+      <section id="skills" className={styles.bg} style={{ backgroundImage: `url(${myData.bg.url})` }}>
+        <div id="skills_container" className={`${styles.container} container`} ref={ref}>
+          <div className={`${styles.content}`}>
+              <div className={`${styles.languages}`}>
+                {
+                  myData.languages.map(({language, level}, index)=>(
+                    <span key={index} className={`${styles.row}`}>
+                      <h1>{language}</h1>
+                      <Arrow/>
+                      <h1>{level}</h1>
+                    </span>
+                  ))
+                }
+              </div>
+              <canvas id="my_skills" className={`${styles.chart}`}></canvas>
+          </div>
         </div>
       </section>
     </>

@@ -1,16 +1,7 @@
-@use 'animations.module' as animations
-
 $cardWidth: 15em
 $cardTransitionDuration: .5s
         
 
-.fadeInRightAnimation
-    animation: 
-        name: container
-        duration: 1s
-        fill-mode: forwards
-@include animations.FadeInRight($name: container)
-////////////////////////////////////////////
 .bg
     background: 
         size: cover
@@ -32,7 +23,9 @@ $cardTransitionDuration: .5s
     transform: rotate(180deg)
 
 .container
-    opacity: 0
+    transform: translateX(110%)
+    transition: 
+        duration: 1s
     padding: 7em 1.5em
     display:  flex
     position: relative
@@ -55,6 +48,14 @@ $cardTransitionDuration: .5s
         font-size: 2.5em
         color: rgba(0, 0, 0, .8)
         font-family: 'Baloo Tammudu 2', cursive
+        cursor: default
+//////////////////////////
+.slideInRightAnimation
+    transform: translateX(0)
+//////////////////////////
+
+
+
 .cards_container
     overflow: hidden
     display: flex

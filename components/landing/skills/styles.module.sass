@@ -1,3 +1,14 @@
+@use './animations.module' as anim
+    
+////////////////////////////////
+.grow_animation
+    animation: 
+        name: container
+        duration: 1s
+        fill-mode: forwards
+@include anim.Grow($name: container)
+
+////////////////////////////////
 .bg
     background: 
         size: cover
@@ -16,12 +27,49 @@
     top: 0
     left: 0
     transform: rotate(180deg)
+
 .container
-    padding: 5em 1.5em
+    opacity: 0
+    padding: 7em 1.5em
     display:  flex
-    position: relative
+    justify-content: center
+
+
+.content
+    width: 100%
+    height: auto
+    display:  flex
     flex-direction: column
     justify-content: center
     align-items: center
+
+.languages
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    width: 100%
+    margin-bottom: 4em
+    text-transform: uppercase
+    .row
+        width: 100%
+        margin: .8em 0
+        display: flex
+        justify-content: space-between
+        font-size: 1.5em
+        height: 1.5em
+        svg
+            height: 1em
+        h1 
+            display: flex
+            align-items: center
+            margin: 0
+            font: 
+                size: 1em
+                family: 'Baloo Tammudu 2', cursive
     
-    
+
+
+@media screen and ( min-width:  768px)
+    .content
+        width: 59%
