@@ -1,0 +1,116 @@
+{
+  "intro": {
+    "bg": {
+      "url": "https://res.cloudinary.com/d1zc3/image/upload/s--ylXO-PYg--/v1598561115/portfolio/landing/machu_picchu_1.jpg",
+      "author": "https://unsplash.com/@sebastiantapiahuerta"
+    },
+
+    "languages": {
+      "title": "Sprache",
+      "list": [
+        {
+          "language": "Spanisch",
+          "route": "/es"
+        },
+        {
+          "language": "Englisch",
+          "route": "/"
+        },
+        {
+          "language": "Deutsch",
+          "route": "/de"
+        }
+      ]
+    },
+    "title": ["Hallo, ich bin", "Líncol Sáenz"],
+    "description": ["Ein leidenschaftlicher Webentwickler.", "Peruaner ", "Dreisprachig. Zielgerichtet. Diszipliniert"]
+  },
+  "siteIndicator": {
+    "projects": "projekte",
+    "skills": "fertigkeiten",
+    "contact": "kontakt"
+  },
+  "projects": {
+    "bg": {
+      "url": "https://res.cloudinary.com/d1zc3/image/upload/s--LGN9WGat--/v1598561114/portfolio/landing/amazonas_1.jpg",
+      "author": "https://unsplash.com/@isaacquesada"
+    },
+    "list": [
+      {
+        "name": "dizce.com",
+        "logo": "https://res.cloudinary.com/d1zc3/image/upload/s--AZx3jvCY--/v1598815707/portfolio/projects/dizce.png",
+        "phrase": "Die Webseite von einem Unternehmen namens 'Dizce'",
+        "description": "'Dizce' ist ein Unternehmen, das sich zum Ziel gesetzt hat, Ihnen den Zugang zu Informationen zu ermöglichen oder Ihre Informationen in anderen Sprachen zugänglich zu machen, und zwar auf professionelle und personalisierte Weise, aber zu niedrigen Kosten. Die Website sollte mit vielen Dienstleistungen implementiert worden sein,  aber im Moment ist nur eine davon verfügbar: Kostenlos (Finden Sie die besten kostenlosen Kurse online)",
+        "href": "https://project-dizce.dizce.com/"
+      },
+      {
+        "name": "admin.dizce.com",
+        "logo": "https://res.cloudinary.com/d1zc3/image/upload/s--PrH-z95W--/v1598815706/portfolio/projects/dizce_company.png",
+        "phrase": "Die Website für die Administratoren der 'Dizce' Webseite",
+        "description": "'Dizce admin' verwendet ein Anmeldesystem, wobei der Schwerpunkt auf begrenzten Privilegien für jede Art von Mitarbeiter in der fiktiven Firma liegt. Es gibt viele Rollen, die auf der Position und den Verpflichtungen in der Firma basieren. Wie bereits erwähnt, erfordert diese Website, dass Sie sich einloggen, d.h. Sie benötigen einen Benutzer und ein Passwort. Wenn Sie daran interessiert sind, dieses Projekt zu explorieren, zögern Sie bitte nicht, mich zu kontaktieren",
+        "href": "https://project-dizceadmin.dizce.com/"
+      }
+    ]
+  },
+  "skills": {
+    "bg": {
+      "url": "https://res.cloudinary.com/d1zc3/image/upload/s--Rj9mDBBo--/v1598561113/portfolio/landing/lima_1.jpg",
+      "author": "https://unsplash.com/@leosvenegas"
+    },
+    "languages": [
+      {
+        "language": "Spanisch",
+        "level": "Muttersprache"
+      },
+      {
+        "language": "Deutsch",
+        "level": "C1"
+      },
+      {
+        "language": "Englisch",
+        "level": "B2"
+      }
+    ],
+    "charts": {
+      "programming": {
+        "indicators": {
+          "label": "Ich",
+          "levels": ["Anfänger", "Mittelstufe", "Fortgeschrittene", "Profi"]
+        },
+        "professional": [],
+        "advanced": ["REACTJS", "EXPRESSJS", "GIT", "ADOBEXD", "CSS&HTML"],
+        "intermediate": ["NEXTJS", "TYPESCRIPT", "PHOTOSHOP"],
+        "beginner": ["PYTHON", "GRAPHQL", "BASH"]
+      }
+    }
+  },
+  "contact": {
+    "bg": {
+      "url": "https://res.cloudinary.com/d1zc3/image/upload/s--R9hdZF5u--/v1598561119/portfolio/landing/barranco_1.jpg",
+      "author": "https://unsplash.com/@andresurena"
+    },
+    "inputs": {
+      "names": "Namen",
+      "mail": "Email",
+      "subject": "Betreff",
+      "message": "Message",
+      "button": "Senden"
+    },
+    "apiResponses": {
+      "success": {
+        "title": "Erfolg!",
+        "text": "Danke. Ich melde mich bald bei Ihnen. :)",
+        "confirm": "Annehmen"
+      },
+      "error": {
+        "title": "Fehler!",
+        "text": {
+          "400": "Es fehlen Felder",
+          "401": "Ungültiger Captcha",
+          "500": "Es ist ein interner Fehler aufgetreten, entschuldigen Sie die Unannehmlichkeiten."
+        },
+        "confirm": "Ok"
+      }
+    }
+  }
+}

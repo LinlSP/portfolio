@@ -1,12 +1,19 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import Intro from './intro'
 import Projects from './projects'
 import Skills from './skills'
 import Contact from './contact'
 import MainSectionWrapper from './mainSectionWrapper'
 
-import myData from 'languages/english/landing.json'
+interface myData {
+  intro: any
+  siteIndicator: any
+  projects: any
+  skills: any
+  contact: any
+}
 
-export default function Landing(): JSX.Element {
+export default function Landing({ myData }: { myData: myData }): JSX.Element {
   return (
     <>
       <Intro data={myData.intro} />

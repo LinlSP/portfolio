@@ -1,7 +1,7 @@
 import Landing from 'components/landing'
 import Footer from 'components/footer'
 import Header from 'next/head'
-import myData from 'languages/english/landing.json'
+import myData from 'languages/german/landing.json'
 
 export default function Home(): JSX.Element {
   return (

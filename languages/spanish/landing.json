@@ -6,29 +6,29 @@
     },
 
     "languages": {
-      "title": "Language",
+      "title": "Idioma",
       "list": [
         {
-          "language": "spanish",
+          "language": "español",
           "route": "/es"
         },
         {
-          "language": "english",
+          "language": "inglés",
           "route": "/"
         },
         {
-          "language": "german",
+          "language": "alemán",
           "route": "/de"
         }
       ]
     },
-    "title": ["Hello, I am", "Líncol Sáenz"],
-    "description": ["A passionated web developer.", "Originally from ", "Trilingual. Target-oriented. Disciplined"]
+    "title": ["Hola, yo soy", "Líncol Sáenz"],
+    "description": ["Un apasionado desarrollador web.", "Originario de ", "Trilingüe. Enfocado. Disciplinado"]
   },
   "siteIndicator": {
-    "projects": "projects",
-    "skills": "skills",
-    "contact": "contact"
+    "projects": "projectos",
+    "skills": "habilidades",
+    "contact": "contacto"
   },
   "projects": {
     "bg": {
@@ -39,15 +39,15 @@
       {
         "name": "dizce.com",
         "logo": "https://res.cloudinary.com/d1zc3/image/upload/s--AZx3jvCY--/v1598815707/portfolio/projects/dizce.png",
-        "phrase": "The website of a fictious company named 'Dizce'",
-        "description": "'Dizce' is a company dedicated to provide you with access to information or make your information accessible in other languages, in a professional and personalized way, but at a low cost. The website should have been implemented with many services, but at the moment only one is available: Free (Find the best free courses online)",
+        "phrase": "El sitio web de una compañía ficticia llamada 'Dizce'",
+        "description": "'Dizce' es una compañía dedicada a proveerte de información o presentar tu información en otros idiomas, de forma personalizada y profesional, pero a un bajo costo. El sitio debería de haber sido implementado con distintos servicios, pero hasta el momento solo cuenta con uno: Gratis (Encuentra los mejores cursos online gratuitos)",
         "href": "https://project-dizce.dizce.com/"
       },
       {
         "name": "admin.dizce.com",
         "logo": "https://res.cloudinary.com/d1zc3/image/upload/s--PrH-z95W--/v1598815706/portfolio/projects/dizce_company.png",
-        "phrase": "The website for the administrators of the 'Dizce' website",
-        "description": "'Dizce admin' uses a login system, with focus on the limitation of privileges for every type of employee in the fictious company. There are many roles based in the position and the obligations at the company. As stated before, this site requires you to log in, that means you will need an user and password. If you are interested in exploring this project, please feel free to contact me.",
+        "phrase": "El sitio web para los administradores de 'Dizce'",
+        "description": "'Dizce admin' usa un sistema de inicio de sesión, con foco en la limitación de privilegios para cada tipo de empleado en la compañía ficticia. Hay distintos roles basados en la posición y las obligaciones en la compañía. Como ya se mencionó, este sitio requiere que inicies una sesión, eso quiere decir que vas a necesitar un usuario y una contraseña. Si estás interesado en explorar este proyecto, por favor siéntete libre de contactarme",
         "href": "https://project-dizceadmin.dizce.com/"
       }
     ]
@@ -59,23 +59,23 @@
     },
     "languages": [
       {
-        "language": "Spanish",
-        "level": "Native"
+        "language": "Español",
+        "level": "Nativo"
       },
       {
-        "language": "German",
+        "language": "Alemán",
         "level": "C1"
       },
       {
-        "language": "English",
+        "language": "Inglés",
         "level": "B2"
       }
     ],
     "charts": {
       "programming": {
         "indicators": {
-          "label": "ME",
-          "levels": ["Beginner", "Intermediate", "Advanced", "Professional"]
+          "label": "Yo",
+          "levels": ["Principiante", "Intermedio", "Avanzado", "Profesional"]
         },
         "professional": [],
         "advanced": ["REACTJS", "EXPRESSJS", "GIT", "ADOBEXD", "CSS&HTML"],
@@ -90,26 +90,26 @@
       "author": "https://unsplash.com/@andresurena"
     },
     "inputs": {
-      "names": "Names",
-      "mail": "E-mail",
-      "subject": "Subject",
-      "message": "Message",
-      "button": "Send"
+      "names": "Nombres",
+      "mail": "Correo",
+      "subject": "Asunto",
+      "message": "Mensaje",
+      "button": "Enviar"
     },
     "apiResponses": {
       "success": {
-        "title": "Success!",
-        "text": "Thank you. We will be in touch soon :)",
-        "confirm": "Accept"
+        "title": "Éxito!",
+        "text": "Gracias. Pronto estaremos en contacto :)",
+        "confirm": "Aceptar"
       },
       "error": {
         "title": "Error!",
         "text": {
-          "400": "Fields are Missing",
-          "401": "Captcha is invalid",
-          "500": "An internal error occurred, sorry for the inconvenience."
+          "400": "Aún hay campos vacíos",
+          "401": "El Captcha es inválido",
+          "500": "Un error interno ha ocurrido. Disculpe por el inconveniente"
         },
-        "confirm": "Ok"
+        "confirm": "Bien"
       }
     }
   }
