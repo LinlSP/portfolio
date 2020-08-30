@@ -36,6 +36,7 @@ export default function Contact({ data }: { data: Data }): JSX.Element {
   const [ref, inSight] = useObserver(0.4)
   const { success: apiSuccess, error: apiError } = data.apiResponses
   const { inputs } = data
+  const author = { backgroundAuthor: data.bg.author }
 
   const onSubmitForm = (e) => {
     e.preventDefault()
@@ -109,7 +110,13 @@ export default function Contact({ data }: { data: Data }): JSX.Element {
       <Head>
         <script src="https://www.google.com/recaptcha/api.js" async defer></script>
       </Head>
-      <section id="contact" className={styles.bg} style={{ backgroundImage: `url(${data.bg.url})` }} ref={ref}>
+      <section
+        id="contact"
+        className={styles.bg}
+        style={{ backgroundImage: `url(${data.bg.url})` }}
+        ref={ref}
+        {...author}
+      >
         <div id="contact_container" className={`${styles.container} container`}>
           <form className={styles.form} onSubmit={onSubmitForm} style={{ opacity: `${loading ? '.8' : '1'}` }}>
             <input

@@ -31,6 +31,7 @@ import Arrow from 'Icons/landing/iosArrow'
 // }
 
 export default function Skills({ data: myData }) {
+  const author = { backgroundAuthor: data.bg.author }
   const [ref, inSight] = useObserver(0.2)
 
   const { programming } = myData.charts
@@ -113,7 +114,7 @@ export default function Skills({ data: myData }) {
       <Head>
         <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
       </Head>
-      <section id="skills" className={styles.bg} style={{ backgroundImage: `url(${myData.bg.url})` }}>
+      <section id="skills" className={styles.bg} style={{ backgroundImage: `url(${myData.bg.url})` }} {...author}>
         <div id="skills_container" className={`${styles.container} container`} ref={ref}>
           <div className={`${styles.content}`}>
               <div className={`${styles.languages}`}>
