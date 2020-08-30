@@ -22,7 +22,6 @@ interface Text {
 }
 
 function Intro({ data }: { data: Text }): JSX.Element {
-  const author = { backgroundAuthor: data.bg.author }
   const [languagesHidden, setLanguagesHidden] = useState<boolean>(false)
   const [ref, inSight] = useObserver(0.2)
 
@@ -50,7 +49,12 @@ function Intro({ data }: { data: Text }): JSX.Element {
           ))}
         </div>
       </div>
-      <section id="intro" className={styles.bg} style={{ backgroundImage: `url(${data.bg.url})` }} {...author}>
+      <section
+        id="intro"
+        className={styles.bg}
+        style={{ backgroundImage: `url(${data.bg.url})` }}
+        {...{ backgroundauthor: data.bg.author }}
+      >
         <div className="container justify-content-center" ref={ref}>
           <div className={`${styles.container}`}>
             <div className={`${styles.changeLanguage}`}>

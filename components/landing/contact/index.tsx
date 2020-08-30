@@ -36,7 +36,6 @@ export default function Contact({ data }: { data: Data }): JSX.Element {
   const [ref, inSight] = useObserver(0.4)
   const { success: apiSuccess, error: apiError } = data.apiResponses
   const { inputs } = data
-  const author = { backgroundAuthor: data.bg.author }
 
   const onSubmitForm = (e) => {
     e.preventDefault()
@@ -115,7 +114,7 @@ export default function Contact({ data }: { data: Data }): JSX.Element {
         className={styles.bg}
         style={{ backgroundImage: `url(${data.bg.url})` }}
         ref={ref}
-        {...author}
+        {...{ backgroundauthor: data.bg.author }}
       >
         <div id="contact_container" className={`${styles.container} container`}>
           <form className={styles.form} onSubmit={onSubmitForm} style={{ opacity: `${loading ? '.8' : '1'}` }}>

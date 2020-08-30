@@ -21,7 +21,6 @@ export default function Projects({
     list: Array<objects>
   }
 }): JSX.Element {
-  const author = { backgroundAuthor: data.bg.author }
   const [position, setPosition] = useState<number>(1)
   const [ref, inSight] = useObserver(0.2)
 
@@ -53,7 +52,7 @@ export default function Projects({
         className={styles.bg}
         style={{ backgroundImage: `url(${data.bg.url})` }}
         ref={ref}
-        {...author}
+        {...{ backgroundauthor: data.bg.author }}
       >
         <div id="project_container" className={`${styles.container} container`}>
           <Arrow
