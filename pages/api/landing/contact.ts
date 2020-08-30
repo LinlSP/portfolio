@@ -47,13 +47,12 @@ export default async (req, res, next) => {
         subject: subject,
         text: `${names}:  ${message}`,
       })
-
       res.status(200).end()
       return
     } catch (error) {
       console.log(error)
       if (error.msg) {
-        res.status(400).send(error.msg)
+        res.status(401).send(error.msg)
         return
       }
       res.status(500).end()

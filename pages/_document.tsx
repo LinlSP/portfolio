@@ -28,6 +28,8 @@ class MyDocument extends Document {
             integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
             crossOrigin="anonymous"
           />
+          <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+          <script src="sweetalert2.all.min.js"></script>
         </Head>
         <body>
           <Main />

@@ -90,6 +90,22 @@
     "bg": {
       "url": "https://res.cloudinary.com/d1zc3/image/upload/s--R9hdZF5u--/v1598561119/portfolio/landing/barranco_1.jpg",
       "author": "https://unsplash.com/@andresurena"
+    },
+    "apiResponses": {
+      "success": {
+        "title": "Success!",
+        "text": "Thank you. We will be in contact soon :)",
+        "confirm": "Accept"
+      },
+      "error": {
+        "title": "Error!",
+        "text": {
+          "400": "Fields are Missing",
+          "401": "Captcha is invalid",
+          "500": "An internal error occurred, sorry for the inconvenience."
+        },
+        "confirm": "Ok"
+      }
     }
   }
 }

@@ -1,23 +1,42 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import styles from './styles.module.sass'
 import Head from 'next/head'
+import { useState } from 'react'
 import useObserver from 'customHooks/intersectionObserver'
-
-// import { useState } from 'react'
-
 interface Data {
   bg: {
     url: string
     author: string
   }
+  apiResponses: {
+    success: {
+      title: string
+      text: string
+      confirm: string
+    }
+    error: {
+      title: string
+      text: {
+        errorCodeAsString: string
+      }
+      confirm: string
+    }
+  }
 }
 
 export default function Contact({ data }: { data: Data }): JSX.Element {
+  const [loading, setLoading] = useState(false)
   const [ref, inSight] = useObserver(0.4)
-  // const [validation, setValidation] = useState<{ captcha: boolean; message: string }>({ captcha: true, message: '' })
-  // const { captcha, message } = validation
+  const { success: apiSuccess, error: apiError } = data.apiResponses
 
   const onSubmitForm = (e) => {
     e.preventDefault()
+    e.persist()
+    setLoading(true)
+    /////////Define sweetalert2 package
+    const Tab = window as any
+    const { Swal } = Tab
+    ///////
     const object = {}
     const form = new FormData(e.target)
     form.forEach((value, key) => {
@@ -32,12 +51,45 @@ export default function Contact({ data }: { data: Data }): JSX.Element {
       },
       body: formData,
     })
-    // .then((response) => response)
-    // .then((result) => {
-    //   console.log(result)
-    // })
-    // .catch((err) => console.log(err))
-    // console.log(document.querySelector('#g-recaptcha-response'))
+      .then(({ status, ok }: { status: number; ok: boolean }) => {
+        let swalObject = {
+          title: '',
+          text: '',
+          icon: '',
+          confirmButtonText: '',
+        }
+        if (ok) {
+          swalObject = {
+            title: apiSuccess.title,
+            text: apiSuccess.text,
+            icon: 'success',
+            confirmButtonText: apiSuccess.confirm,
+          }
+          ////reset form
+          e.target.reset()
+        } else {
+          swalObject = {
+            title: apiError.title,
+            text: apiError.text[status.toString(10)],
+            icon: 'error',
+            confirmButtonText: apiError.confirm,
+          }
+          setLoading(false)
+        }
+
+        return Swal.fire(swalObject)
+      })
+      .catch((err) => {
+        Swal.fire({
+          title: apiError.title,
+          text: apiError.text['500'],
+          icon: 'error',
+          confirmButtonText: apiError.confirm,
+        })
+
+        console.log(err)
+        return setLoading(false)
+      })
   }
 
   if (inSight) {
@@ -51,17 +103,43 @@ export default function Contact({ data }: { data: Data }): JSX.Element {
       </Head>
       <section id="contact" className={styles.bg} style={{ backgroundImage: `url(${data.bg.url})` }} ref={ref}>
         <div id="contact_container" className={`${styles.container} container`}>
-          <form className={styles.form} onSubmit={onSubmitForm}>
-            <input className={`form-control ${styles.input}`} placeholder="Names" type="text" name="names" />
-            <input className={`form-control ${styles.input}`} placeholder="E-Mail" type="email" name="email" />
-            <input className={`form-control ${styles.input}`} placeholder="Subject" type="text" name="subject" />
-            <textarea className={`form-control`} placeholder="Message" name="message"></textarea>
+          <form className={styles.form} onSubmit={onSubmitForm} style={{ opacity: `${loading ? '.8' : '1'}` }}>
+            <input
+              required
+              disabled={loading}
+              className={`form-control ${styles.input}`}
+              placeholder="Names"
+              type="text"
+              name="names"
+            />
+            <input
+              required
+              disabled={loading}
+              className={`form-control ${styles.input}`}
+              placeholder="E-Mail"
+              type="email"
+              name="email"
+            />
+            <input
+              required
+              disabled={loading}
+              className={`form-control ${styles.input}`}
+              placeholder="Subject"
+              type="text"
+              name="subject"
+            />
+            <textarea
+              required
+              disabled={loading}
+              className={`form-control`}
+              placeholder="Message"
+              name="message"
+            ></textarea>
             <div
               className={`g-recaptcha ${styles.input}`}
               data-sitekey="6LciBMIZAAAAAPMOPW8KaAKpQFmvbSDUsVpwBvUH"
             ></div>
-            <input className={`btn btn-danger`} type="submit" value="Send" />
-            {/* <span>{message}</span> */}
+            <input disabled={loading} className={`btn btn-danger`} type="submit" value="Send" />
           </form>
         </div>
       </section>
