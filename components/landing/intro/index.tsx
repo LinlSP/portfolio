@@ -15,12 +15,7 @@ interface Text {
   }
   languages: {
     title: string
-    list: [
-      {
-        language: string
-        route: string
-      }
-    ]
+    list: { language: string; route: string }[]
   }
   title: string[]
   description: string[]

@@ -2,7 +2,17 @@ import { useEffect, useState } from 'react'
 import styles from './styles.module.sass'
 import SectionIndicator from 'Icons/landing/sectionIndicator'
 
-export default function sideIndicatorWrapper({ children }: { children: React.ReactNode }): JSX.Element {
+interface Text {
+  [sectionName: string]: string
+}
+
+export default function sideIndicatorWrapper({
+  children,
+  data,
+}: {
+  children: React.ReactNode
+  data: Text
+}): JSX.Element {
   const [childrenProps, setChildrenProps] = useState<{ name: string; width: string }[]>([])
 
   useEffect(() => {
@@ -34,7 +44,7 @@ export default function sideIndicatorWrapper({ children }: { children: React.Rea
       const child = mainSectionWrapper.children[i]
       const sectionWidth = (child.clientHeight / height) * 100
       const property = {
-        name: child.id,
+        name: data[child.id],
         width: sectionWidth + '%',
       }
       childrenNamesArray.push(property)

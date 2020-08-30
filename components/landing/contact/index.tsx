@@ -8,6 +8,13 @@ interface Data {
     url: string
     author: string
   }
+  inputs: {
+    names: string
+    mail: string
+    subject: string
+    message: string
+    button: string
+  }
   apiResponses: {
     success: {
       title: string
@@ -17,7 +24,7 @@ interface Data {
     error: {
       title: string
       text: {
-        errorCodeAsString: string
+        [errorCode: string]: string
       }
       confirm: string
     }
@@ -28,6 +35,7 @@ export default function Contact({ data }: { data: Data }): JSX.Element {
   const [loading, setLoading] = useState(false)
   const [ref, inSight] = useObserver(0.4)
   const { success: apiSuccess, error: apiError } = data.apiResponses
+  const { inputs } = data
 
   const onSubmitForm = (e) => {
     e.preventDefault()
@@ -108,7 +116,7 @@ export default function Contact({ data }: { data: Data }): JSX.Element {
               required
               disabled={loading}
               className={`form-control ${styles.input}`}
-              placeholder="Names"
+              placeholder={inputs.names}
               type="text"
               name="names"
             />
@@ -116,7 +124,7 @@ export default function Contact({ data }: { data: Data }): JSX.Element {
               required
               disabled={loading}
               className={`form-control ${styles.input}`}
-              placeholder="E-Mail"
+              placeholder={inputs.mail}
               type="email"
               name="email"
             />
@@ -124,7 +132,7 @@ export default function Contact({ data }: { data: Data }): JSX.Element {
               required
               disabled={loading}
               className={`form-control ${styles.input}`}
-              placeholder="Subject"
+              placeholder={inputs.subject}
               type="text"
               name="subject"
             />
@@ -132,14 +140,14 @@ export default function Contact({ data }: { data: Data }): JSX.Element {
               required
               disabled={loading}
               className={`form-control`}
-              placeholder="Message"
+              placeholder={inputs.message}
               name="message"
             ></textarea>
             <div
               className={`g-recaptcha ${styles.input}`}
               data-sitekey="6LciBMIZAAAAAPMOPW8KaAKpQFmvbSDUsVpwBvUH"
             ></div>
-            <input disabled={loading} className={`btn btn-danger`} type="submit" value="Send" />
+            <input disabled={loading} className={`btn btn-danger`} type="submit" value={inputs.button} />
           </form>
         </div>
       </section>
