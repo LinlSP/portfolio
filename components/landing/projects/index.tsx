@@ -22,7 +22,7 @@ export default function Projects({
   }
 }): JSX.Element {
   const [position, setPosition] = useState<number>(1)
-  const [ref, inSight] = useObserver(0.2)
+  const [ref, inSight] = useObserver(0.3)
 
   const nextProject = () => {
     setPosition(position + 1)

@@ -8,19 +8,8 @@ $cardTransitionDuration: .5s
         position: center
         repeat: no-repeat
     font-size: 1rem
+    overflow-x: hidden
     position: relative
-.bgFigure
-    right: 0
-    position: absolute
-    height: 100%
-    width: 13em
-    opacity: .4
-.bgFigureLeft
-    display: none
-    @extend .bgFigure
-    top: 0
-    left: 0
-    transform: rotate(180deg)
 
 .container
     transform: translateX(110%)
@@ -125,6 +114,4 @@ $cardTransitionDuration: .5s
     .cards_container
         width: $cardWidth*3
         padding-left: $cardWidth
-    .bgFigureLeft
-        display: block
 
