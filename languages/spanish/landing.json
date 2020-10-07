@@ -41,14 +41,14 @@
         "logo": "https://res.cloudinary.com/d1zc3/image/upload/s--AZx3jvCY--/v1598815707/portfolio/projects/dizce.png",
         "phrase": "El sitio web de una compañía ficticia llamada 'Dizce'",
         "description": "'Dizce' es una compañía dedicada a proveerte de información o presentar tu información en otros idiomas, de forma personalizada y profesional, pero a un bajo costo. El sitio debería de haber sido implementado con distintos servicios, pero hasta el momento solo cuenta con uno: Gratis (Encuentra los mejores cursos online gratuitos)",
-        "href": "https://project-dizce.dizce.com/"
+        "href": "http://project-dizce.dizce.com/"
       },
       {
         "name": "admin.dizce.com",
         "logo": "https://res.cloudinary.com/d1zc3/image/upload/s--PrH-z95W--/v1598815706/portfolio/projects/dizce_company.png",
         "phrase": "El sitio web para los administradores de 'Dizce'",
         "description": "'Dizce admin' usa un sistema de inicio de sesión, con foco en la limitación de privilegios para cada tipo de empleado en la compañía ficticia. Hay distintos roles basados en la posición y las obligaciones en la compañía. Como ya se mencionó, este sitio requiere que inicies una sesión, eso quiere decir que vas a necesitar un usuario y una contraseña. Si estás interesado en explorar este proyecto, por favor siéntete libre de contactarme",
-        "href": "https://project-dizceadmin.dizce.com/"
+        "href": "http://project-dizceadmin.dizce.com/"
       }
     ]
   },

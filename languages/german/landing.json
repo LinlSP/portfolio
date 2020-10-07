@@ -41,14 +41,14 @@
         "logo": "https://res.cloudinary.com/d1zc3/image/upload/s--AZx3jvCY--/v1598815707/portfolio/projects/dizce.png",
         "phrase": "Die Webseite von einem Unternehmen namens 'Dizce'",
         "description": "'Dizce' ist ein Unternehmen, das sich zum Ziel gesetzt hat, Ihnen den Zugang zu Informationen zu ermöglichen oder Ihre Informationen in anderen Sprachen zugänglich zu machen, und zwar auf professionelle und personalisierte Weise, aber zu niedrigen Kosten. Die Website sollte mit vielen Dienstleistungen implementiert worden sein,  aber im Moment ist nur eine davon verfügbar: Kostenlos (Finden Sie die besten kostenlosen Kurse online)",
-        "href": "https://project-dizce.dizce.com/"
+        "href": "http://project-dizce.dizce.com/"
       },
       {
         "name": "admin.dizce.com",
         "logo": "https://res.cloudinary.com/d1zc3/image/upload/s--PrH-z95W--/v1598815706/portfolio/projects/dizce_company.png",
         "phrase": "Die Website für die Administratoren der 'Dizce' Webseite",
         "description": "'Dizce admin' verwendet ein Anmeldesystem, wobei der Schwerpunkt auf begrenzten Privilegien für jede Art von Mitarbeiter in der fiktiven Firma liegt. Es gibt viele Rollen, die auf der Position und den Verpflichtungen in der Firma basieren. Wie bereits erwähnt, erfordert diese Website, dass Sie sich einloggen, d.h. Sie benötigen einen Benutzer und ein Passwort. Wenn Sie daran interessiert sind, dieses Projekt zu explorieren, zögern Sie bitte nicht, mich zu kontaktieren",
-        "href": "https://project-dizceadmin.dizce.com/"
+        "href": "http://project-dizceadmin.dizce.com/"
       }
     ]
   },
